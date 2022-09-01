@@ -81,7 +81,7 @@ jobs:
 
             -   name: Export the Package (binaries)
                 if: ${{ inputs.conan_export_binaries }}
-                run: conan export-pkg . ${{ inputs.recipe_id_full }}
+                run: conan create . ${{ inputs.recipe_id_full }} --build=missing --update
 
             -   name: Export the Package
                 if: ${{ !inputs.conan_export_binaries }}
@@ -102,5 +102,5 @@ jobs:
                 run: conan upload "*" -r cura --all -c
 
             -   name: Upload the Package(s) community
-                if: ${{ always() && inputs.conan_upload_community == 'true' }}
+                if: ${{ always() && inputs.conan_upload_community == true }}
                 run: conan upload "*" -r cura-ce -c
