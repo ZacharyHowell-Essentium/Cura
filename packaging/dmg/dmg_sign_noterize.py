@@ -14,11 +14,11 @@ def build_dmg(source_path: str, dist_path: str, filename: str) -> None:
                  "--app-drop-link", "520", "272",
                  "--volicon", f"{source_path}/packaging/icons/VolumeIcons_Cura.icns",
                  "--icon-size", "90",
-                 "--icon", "Ultimaker-Cura.app", "169", "272",
+                 "--icon", "Ultimaker Cura.app", "169", "272",
                  "--eula", f"{source_path}/packaging/cura_license.txt",
                  "--background", f"{source_path}/packaging/dmg/cura_background_dmg.png",
                  f"{dist_path}/{filename}",
-                 f"{dist_path}/Ultimaker-Cura.app"]
+                 f"{dist_path}/Ultimaker Cura.app"]
 
     subprocess.run(arguments)
 
